@@ -4,22 +4,14 @@ import java.util.HashMap;
 
 class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-        int sum = 0;
-        int a, b;
-        int[] arr = new int[2];
+        HashMap<Integer, Integer> map = new HashMap<>();
         for(int i=0; i<nums.length; i++) {
-            a = nums[i];
-            for(int j=i+1; j<nums.length; j++){
-                b = nums[j];
-                sum = a+b;
-                if(sum == target) {
-                    arr[0] = i;
-                    arr[1] = j;
-                    break;
-                }
+            int result = target - nums[i];
+            if(map.containsKey(result)) {
+                return new int[]{map.get(result), i};
             }
-            if(sum == target) break;
+            map.put(nums[i],i);
         }
-        return arr;
+        return new int[]{};
     }
 }
