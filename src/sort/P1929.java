@@ -11,22 +11,18 @@ public class P1929 {
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
 
-        isPrime(a,b);
+        //배열 생성
+        boolean[] isPrime = new boolean[b+1];
 
-    }
+        for(int i=2; i<=b; i++) {
+            //짝수면 소수가 아니므로 통과
+            if(isPrime[i]) continue;
 
-    static int num = 1000001;
-    static int[] arr = new int[num];
+            //짝수가 아닌 i가 a보다 크면 출력
+            if(i >= a) System.out.println(i);
 
-    static void isPrime(int a, int b){
-        for(int i=2; i<num; i++) arr[i] = i;
-        for(int i=2; i<num; i++){
-            if(arr[i] == 0) continue;
-            for(int j=2*i; j<num; j+=i) arr[j] = 0;
+            //이미 지워진 숫자가 아니라면 그 배수부터 출발, 가능한 모든 숫자 지우기
+            for(int j=i+i; j<=b; j+=i) isPrime[j] = true;
         }
-        for(int i=a; i<=b; i++) {
-            if(arr[i]!=0) System.out.println(arr[i]);
-        }
-
     }
 }
