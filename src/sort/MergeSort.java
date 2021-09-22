@@ -13,25 +13,19 @@ public class MergeSort {
 
         //분할 정렬된 list의 합병
         while(i<=mid && j<=right){
-            if(list[i]<=list[j]) sort[k++] = list[i++];
-            else sort[k++] = list[j++];
+            if(list[i] <= list[j])
+                sort[k++] = list[i++];
+            else
+                sort[k++] = list[j++];
         }
 
-        //남아 있는 값들을 일괄 복사
-        if(i>mid) {
-            for (l = j; l <= right; l++) {
-                sort[k++] = list[l];
-            }
-        }
+        //남아 있는 값들을 일괄 복사 (둘 중 하나만 실행됨)
+        while(i<=mid)
+            sort[k++] = list[i++];
+        while(j<=right)
+            sort[k++] = list[j++];
 
-        //남아 있는 값들을 일괄 복사
-        else {
-            for (l = i; l <= mid; l++) {
-                sort[k++] = list[l];
-            }
-        }
-
-        //배열 sort[] (임시배열)의 리스트를 배열 list[]로 재복사
+        //배열 sort[]의 리스트를 배열 list[]로 재복사
         for(l=left; l<=right; l++) {
             list[l] = sort[l];
         }
@@ -40,7 +34,7 @@ public class MergeSort {
     //합병정렬
     static void merge_sort(int[] list, int left, int right){
         int mid;
-        if(left<right){
+        if(left < right){
             mid = (left+right)/2; //중간 위치 계산하여 리스트를 균등 분할 - 분할 divide
             merge_sort(list, left, mid); //앞쪽 리스트 정렬 - 정복 conquer
             merge_sort(list, mid+1, right); //뒤쪽 리스트 정렬 - 정복 conquer
