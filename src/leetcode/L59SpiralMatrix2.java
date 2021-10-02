@@ -1,3 +1,5 @@
+package leetcode;
+
 public class L59SpiralMatrix2 {
 
     public static void main(String[] args) {
