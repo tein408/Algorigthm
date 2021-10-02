@@ -23,7 +23,7 @@ public class P1300 {
         //5 10 15 20 25 30 -> 5
         //6 12 18 24 26 30 -> 4
         //=> min(k/i, n) 이 각 행에서 k보다 작은 수의 개수(cnt)가 됨.
-        //   k가 몇 번째인지는 cnt의 합이 됨.
+        //   B[k]는 cnt를 이용해서 찾음
 
         while(left < right) {
             int cnt = 0;
