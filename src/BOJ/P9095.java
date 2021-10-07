@@ -8,6 +8,9 @@ public class P9095 {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
         int t = Integer.parseInt(bf.readLine());
+        
+        //규칙을 찾는 문제
+        
         int[] result = new int[11];
         result[0] = 0;
         result[1] = 1;
