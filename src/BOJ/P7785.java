@@ -10,6 +10,7 @@ public class P7785 {
         int n = Integer.parseInt(bf.readLine());
         Map<String, String> map = new HashMap<>();
         List<String> list = new ArrayList<>();
+        StringBuffer sb = new StringBuffer();
 
         for(int i=0; i<n; i++) {
             String name = bf.readLine().split(" ")[0];
@@ -25,7 +26,9 @@ public class P7785 {
         Collections.sort(list);
 
         for(int i=list.size()-1; i>=0; i--)
-            System.out.println(list.get(i));
+            sb.append(list.get(i)).append("\n");
+
+        System.out.println(sb);
 
 
     }
