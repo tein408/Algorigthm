@@ -1,6 +1,6 @@
-package leetcode;
+package leetcode.medium;
 
-public class L59SpiralMatrix2 {
+public class LC59 {
 
     public static void main(String[] args) {
 
