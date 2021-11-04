@@ -1,4 +1,7 @@
-package leetcode;
+package leetcode.medium;
+
+
+
 
 /**
  * Definition for singly-linked list.
@@ -12,7 +15,7 @@ package leetcode;
  * }
  */
 //leetcode #142
-//public class LinkedListCycle2 {
+//public class LC142 {
 //
 //    public ListNode detectCycle(ListNode head) {
 //        ListNode slow = head;
