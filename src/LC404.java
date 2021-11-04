@@ -14,6 +14,7 @@
  * }
  */
 
+/*
 class LC404 {
     public int sumOfLeftLeaves(TreeNode root) {
         return sum(root);
@@ -33,4 +34,4 @@ class LC404 {
         sum += sum(root.right);
         return sum;
     }
-}
+}*/
