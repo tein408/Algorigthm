@@ -12,9 +12,7 @@ public class LC441 {
 
         for(int i=1; i<n; i++) {
             long next = list.get(i-1) + i+1;
-            if(i<10)
-                list.add(next);
-            if(list.get(i) < Integer.MAX_VALUE) {
+            if(list.get(i-1) < Integer.MAX_VALUE) {
                 list.add(next);
             } else {
                 break;
