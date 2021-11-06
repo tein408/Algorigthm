@@ -10,23 +10,16 @@ public class P1977 {
         StringTokenizer st = new StringTokenizer(bf.readLine(), " ");
         String a = st.nextToken();
         String b = st.nextToken();
-        String c = "", d = "";
 
-        for(int i=a.length()-1; i>=0; i--) {
-            c += a.charAt(i);
-        }
-        for(int i=b.length()-1; i>=0; i--) {
-            d += b.charAt(i);
-        }
+        StringBuffer sb = new StringBuffer(a);
+        int c = Integer.parseInt(sb.reverse().toString());
 
-        String ans = (Integer.parseInt(c) + Integer.parseInt(d)) + "";
+        sb = new StringBuffer(b);
+        int d = Integer.parseInt(sb.reverse().toString());
 
-        String res = "";
-        for(int i=ans.length()-1; i>=0; i--) {
-             res += ans.charAt(i);
-        }
-
-        System.out.println(Integer.parseInt(res));
+        String res = (c+d) + "";
+        sb = new StringBuffer(res);
+        System.out.println(Integer.parseInt(sb.reverse().toString()));
 
     }
 }
