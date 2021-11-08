@@ -13,7 +13,7 @@ public class P14652 {
         int m = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
 
-        System.out.println(k/n + " " + k%m);
+        System.out.println(k/m + " " + k%m);
 
     }
 }
