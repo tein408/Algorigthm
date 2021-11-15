@@ -6,7 +6,7 @@ public class LC191 {
     public int hammingWeight(int n) {
         //use brian kernighan's algorithm
         int cnt = 0;
-        while(n > 0) {
+        while(n != 0) {
             n = n & (n-1);
             cnt++;
         }
