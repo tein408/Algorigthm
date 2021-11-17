@@ -31,7 +31,13 @@ public class LC695 {
 
         visit[x][y] = true;
 
-        return 1 + dfs(grid, x-1, y) + dfs(grid, x+1, y) + dfs(grid, x, y-1) + dfs(grid, x, y+1);
+        int res = 1;
+        res += dfs(grid, x-1, y);
+        res += dfs(grid, x+1, y);
+        res += dfs(grid, x, y-1);
+        res += dfs(grid, x, y+1);
+
+        return res;
 
     }
 
