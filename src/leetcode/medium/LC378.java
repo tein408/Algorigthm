@@ -2,7 +2,7 @@ package leetcode.medium;
 
 import java.util.Arrays;
 
-public class LC136 {
+public class LC378 {
 
     /*public int kthSmallest(int[][] matrix, int k) {
         int len = matrix.length * matrix[0].length;
