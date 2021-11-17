@@ -3,11 +3,7 @@ package leetcode.medium;
 public class LC695 {
 
     boolean[][] visit;
-
-    int n, m, cnt;
-
-    int dx[] = {-1,1,0,0};
-    int dy[] = {0,0,-1,1};
+    int n, m;
 
     public int maxAreaOfIsland(int[][] grid) {
         n = grid.length;
@@ -16,34 +12,27 @@ public class LC695 {
         visit = new boolean[n][m];
 
         int ans = 0;
-        cnt = 0;
         for(int i=0; i<n; i++) {
             for(int j=0; j<m; j++) {
-                cnt = 0;
                 if(!visit[i][j] && grid[i][j] == 1) {
-                    cnt++;
-                    dfs(grid, i, j);
-                    ans = Math.max(cnt, ans);
+                    ans = Math.max(ans, dfs(grid, i, j));
                 }
             }
         }
         return ans;
     }
 
-    void dfs(int[][] grid, int x, int y) {
+    int dfs(int[][] grid, int x, int y) {
+        if(x<0 || y<0 || x>grid.length-1 || y> grid[0].length-1)
+            return 0;
+
+        if(visit[x][y] || grid[x][y] == 0)
+            return 0;
+
         visit[x][y] = true;
 
-        for(int i=0; i<4; i++) {
-            int nx = x + dx[i];
-            int ny = y + dy[i];
+        return 1 + dfs(grid, x-1, y) + dfs(grid, x+1, y) + dfs(grid, x, y-1) + dfs(grid, x, y+1);
 
-            if(nx >= 0 && ny >= 0 && nx < n && ny < m) {
-                if(grid[nx][ny] == 1 && !visit[nx][ny]) {
-                    dfs(grid, nx, ny);
-                    cnt++;
-                }
-            }
-        }
     }
 
 }
