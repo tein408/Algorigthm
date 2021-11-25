@@ -2,7 +2,7 @@ package leetcode.easy;
 
 public class LC35 {
 
-    public static int searchInsert(int[] nums, int target) {
+/*    public static int searchInsert(int[] nums, int target) {
         int left = 0;
         int right = nums.length;
         int ans = -1;
@@ -29,6 +29,21 @@ public class LC35 {
         }
 
         return mid;
+    }*/
+
+    //개선 - 더 간결한 코드
+    public static int searchInsert(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length;
+
+        while(left <= right) {
+            int mid = left + (right - left) / 2;
+            if(nums[mid] >= target)
+                right = mid - 1;
+            else 
+                left = mid + 1;
+        }
+        return left;
     }
 
     public static void main(String[] args) {
