@@ -24,6 +24,20 @@ public class LC77 {
 
     }
 
+    //조금 비슷하지만 다른 풀이
+/*    void solv(List<List<Integer>> ans, List<Integer> list, int[] n, int k, int idx) {
+        if(list.size() == k) {
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+
+        for(int i=idx; i<=k; i++) {
+            list.add(i);
+            solv(ans, list, n, k, i+1);
+            list.remove(list.size() - 1);
+        }
+    }*/
+
     public List<List<Integer>> combine(int n, int k) {
         this.n = n;
         this.k = k;
