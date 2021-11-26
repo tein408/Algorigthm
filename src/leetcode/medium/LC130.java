@@ -1,6 +1,6 @@
 package leetcode.medium;
 
-public class L130 {
+public class LC130 {
 
     static int m, n;
     static char[][] arr;

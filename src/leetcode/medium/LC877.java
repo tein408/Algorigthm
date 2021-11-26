@@ -1,6 +1,6 @@
 package leetcode.medium;
 
-public class L877 {
+public class LC877 {
 
     //return true; 만 해도 되던 문제
     public boolean stoneGame(int[] piles) {
