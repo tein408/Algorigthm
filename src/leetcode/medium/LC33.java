@@ -1,7 +1,5 @@
 package leetcode.medium;
 
-import java.util.Arrays;
-
 public class LC33 {
 
     public int search(int[] nums, int target) {
