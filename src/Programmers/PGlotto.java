@@ -1,8 +1,11 @@
 package Programmers;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class PGlotto {
 
-    public int[] solution(int[] lottos, int[] win_nums) {
+/*    public int[] solution(int[] lottos, int[] win_nums) {
         int zero = 0, min = 0;
         int[] score = {6,6,5,4,3,2,1};
 
@@ -27,6 +30,36 @@ public class PGlotto {
         answer[1] = score[min];
 
         return answer;
+    }*/
+
+    //Set 을 이용한 풀이
+    public int[] solution(int[] lottos, int[] win_nums) {
+        Set<Integer> set = new HashSet<>();
+        int zeroCnt = 0, correct = 0;
+
+        for(int i=0; i<6; i++) {
+            if(lottos[i] == 0) {
+                zeroCnt++;
+            }
+            set.add(lottos[i]);
+        }
+
+        if(zeroCnt == 6) {
+            return new int[] {1, 6};
+        }
+
+        for(int i=0; i<6; i++) {
+            if(set.contains(win_nums[i]))
+                correct++;
+        }
+
+        int max = 7-correct-zeroCnt;
+        int min = 7-correct;
+
+        if(max > 6) max = 6;
+        if(min > 6) min = 6;
+
+        return new int[]{max, min};
     }
 
 }
