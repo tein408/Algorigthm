@@ -1,6 +1,6 @@
 package leetcode.easy;
 
-public class LC26 {
+public class LC69 {
     //내장 함수 사용
 /*    public int mySqrt(int x) {
         return (int) Math.sqrt(x);
