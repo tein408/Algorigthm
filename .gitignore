@@ -5,4 +5,5 @@
 /src/ignore
 /src/Ptemp.java
 /src/LCtemp.java
-
+/src/PGtemp.java
+*.gitignore
