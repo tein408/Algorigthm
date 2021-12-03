@@ -1,6 +1,7 @@
 package Programmers.level1;
 
-public class PGnewId {
+//신규 아이디 추천
+public class PG72410 {
 
     public static String solution(String new_id) {
         String answer = "";
