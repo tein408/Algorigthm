@@ -1,6 +1,7 @@
 package Programmers.level2;
 
-public class PGStringCompress {
+//문자열 압축
+public class PG60057 {
 
     public static int solution(String s) {
 
