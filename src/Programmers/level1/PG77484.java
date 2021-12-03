@@ -3,7 +3,8 @@ package Programmers.level1;
 import java.util.HashSet;
 import java.util.Set;
 
-public class PGlotto {
+//로또의 최고 순위와 최저 순위
+public class PG77484 {
 
 /*    public int[] solution(int[] lottos, int[] win_nums) {
         int zero = 0, min = 0;
