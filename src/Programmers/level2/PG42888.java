@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PGOpenChat {
+//오픈채팅방
+public class PG42888 {
 
     public static String[] solution(String[] record) {
 
