@@ -1,6 +1,7 @@
 package Programmers.level2;
 
-public class PGarrayRotate {
+//행렬 테두리 회전하기
+public class PG77485 {
 
     public static int[] solution(int rows, int columns, int[][] queries) {
         int[] answer = new int[queries.length];
