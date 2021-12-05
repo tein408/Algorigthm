@@ -1,3 +1,5 @@
+package leetcode.sql.easy;
+
 import java.util.ArrayList;
 
 public class LC485 {
