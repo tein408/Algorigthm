@@ -1,4 +1,4 @@
-package leetcode.sql.medium;
+package leetcode.medium;
 
 public class LC200 {
 

@@ -1,4 +1,4 @@
-package leetcode.sql.easy;
+package leetcode.easy;
 
 import java.util.ArrayList;
 
