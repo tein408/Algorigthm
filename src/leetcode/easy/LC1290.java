@@ -1,8 +1,8 @@
-import java.math.BigInteger;
+package leetcode.easy;
 
 public class LC1290 {
     //BigInteger 이용 11ms 37.7mb
-/*    public int getDecimalValue(ListNode1290 head) {
+/*    public int getDecimalValue(leetcode.easy.ListNode1290 head) {
         String str = "";
         while(head != null) {
             str += head.val + "";
@@ -14,7 +14,7 @@ public class LC1290 {
     }*/
 
     //StringBuilder 이용 0ms 36.7mb
-/*    public int getDecimalValue(ListNode1290 head) {
+/*    public int getDecimalValue(leetcode.easy.ListNode1290 head) {
         StringBuilder sb = new StringBuilder();
         while(head != null) {
             sb.append(head.val);
