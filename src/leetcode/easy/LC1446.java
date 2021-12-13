@@ -1,3 +1,5 @@
+package leetcode.easy;
+
 public class LC1446 {
 
     public int maxPower(String s) {
