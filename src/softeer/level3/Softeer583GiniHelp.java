@@ -8,7 +8,6 @@ import java.util.StringTokenizer;
 
 public class Softeer583GiniHelp {
     static int r, c, cnt;
-    static int[] home;
     static char[][] map;
     static boolean[][] taebumVisit;
     static boolean[][] rainVisit;
@@ -35,9 +34,6 @@ public class Softeer583GiniHelp {
                 if(map[i][j] == 'W') {
                     taebumVisit[i][j] = true;
                     taebum.add(new int[] {i, j});
-                }
-                if(map[i][j] == 'H') {
-                    home = new int[] {i, j};
                 }
                 if(map[i][j] == '*') {
                     rain.add(new int[] {i, j});
@@ -81,7 +77,7 @@ public class Softeer583GiniHelp {
             while(tSize-- > 0) {
                 int[] curr = taebum.poll();
 
-                if(curr[0] == home[0] && curr[1] == home[1]) {
+                if(map[curr[0]][curr[1]] == 'H') {
                     System.out.println(cnt);
                     return;
                 }
