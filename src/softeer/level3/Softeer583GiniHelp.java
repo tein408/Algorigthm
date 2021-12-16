@@ -50,28 +50,32 @@ public class Softeer583GiniHelp {
 
     }
 
+    static void rainMoving() {
+        int size = rain.size();
+        for(int j=0; j<size; j++) {
+            int[] curr = rain.poll();
+
+            for(int i=0; i<4; i++) {
+                int nextX = curr[0] + dx[i];
+                int nextY = curr[1] + dy[i];
+
+                if(nextX < 0 || nextY < 0 || nextX >= r || nextY >= c)
+                    continue;
+                if(rainVisit[nextX][nextY] || map[nextX][nextY] == 'H')
+                    continue;
+                if(map[nextX][nextY] == 'X')
+                    continue;
+
+                rainVisit[nextX][nextY] = true;
+                rain.add(new int[] {nextX, nextY});
+            }
+        }
+    }
+
     static void findPath() {
         while(!taebum.isEmpty()) {
 
-            int size = rain.size();
-            for(int j=0; j<size; j++) {
-                int[] curr = rain.poll();
-
-                for(int i=0; i<4; i++) {
-                    int nextX = curr[0] + dx[i];
-                    int nextY = curr[1] + dy[i];
-
-                    if(nextX < 0 || nextY < 0 || nextX >= r || nextY >= c)
-                        continue;
-                    if(rainVisit[nextX][nextY] || map[nextX][nextY] == 'H')
-                        continue;
-                    if(map[nextX][nextY] == 'X')
-                        continue;
-
-                    rainVisit[nextX][nextY] = true;
-                    rain.add(new int[] {nextX, nextY});
-                }
-            }
+            rainMoving();
 
             int tSize = taebum.size();
             while(tSize-- > 0) {
