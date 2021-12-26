@@ -6,7 +6,7 @@ public class LC313 {
         if(n < 2)
             return n;
 
-        //dp[]의 현재 위치 저장
+        //primes의 각 원소를 몇번씩 곱했는지 저장
         int[] idx = new int[primes.length];
         int[] dp = new int[n+1];
         dp[0] = 1;
