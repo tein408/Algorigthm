@@ -13,28 +13,18 @@ public class P11004 {
         int num = Integer.parseInt(st.nextToken());
         int cnt = Integer.parseInt(st.nextToken());
 
-        int[] len = new int[num];
+        int[] arr = new int[num];
         st = new StringTokenizer(bf.readLine()," ");
         for(int i=0; i<num; i++){
-            len[i] = Integer.parseInt(st.nextToken());
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        quickSort(len,0,num-1);
-        //for(int i : len) System.out.println(i);
-        if(cnt!=0) System.out.println(len[cnt-1]);
-        else if(cnt==0) System.out.println(len[cnt]);
+        quickSort(arr,0,num-1);
 
-        /*Scanner s = new Scanner(System.in);
-        int num = s.nextInt();
-        int cnt = s.nextInt();
-
-        int[] len = new int[num];
-        for(int i=0; i<num; i++){
-            len[i] = s.nextInt();
-        }
-        Arrays.sort(len);
-        if(cnt!=0) System.out.println(len[cnt-1]);
-        else if(cnt==0) System.out.println(len[cnt]);*/
+        if(cnt!=0)
+            System.out.println(arr[cnt-1]);
+        else if(cnt==0)
+            System.out.println(arr[cnt]);
 
     }
 
@@ -59,8 +49,10 @@ public class P11004 {
         int pivot = arr[(start + end) / 2];
 
         while (start <= end) {
-            while (arr[start] < pivot) start++;
-            while (arr[end] > pivot) end--;
+            while (arr[start] < pivot)
+                start++;
+            while (arr[end] > pivot)
+                end--;
 
             if (start <= end) {
                 swap(arr, start, end);
