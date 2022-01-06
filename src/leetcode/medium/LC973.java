@@ -38,38 +38,35 @@ public class LC973 {
 
     int[][] select(int[][] points, int k) {
         int left = 0, right = points.length - 1;
-        int pivotIdx = points.length;
-        while(pivotIdx != k) {
-            // 배열 나누기
-            pivotIdx = partition(points, left, right);
-            // 1구역 정렬
-            if(pivotIdx < k)
-                left = pivotIdx;
-            // 2구역 정렬
-            else
-                right = pivotIdx - 1;
+
+        while(left < right) {
+            int pivot = partition(points, left, right);
+
+            if(pivot == k) {
+                break;
+            } else if(pivot < k) {
+                left = pivot + 1;
+            } else {
+                right = pivot - 1;
+            }
         }
+
         return Arrays.copyOf(points, k);
     }
 
     int partition(int[][] points, int left, int right) {
-        // 기준값
-        int[] pivot = points[left + (right - left) / 2];
-        // 끝지점
-        int pivotDist = distance(pivot);
+        int mid = left + (right - left) / 2;
+        int dis = distance(points[mid]);
 
-        while(left < right) {
-
-            if(distance(points[left]) >= pivotDist) {
-                swap(points, left, right);
-                right--;
-            } else {
+        swap(points, mid, right);
+        for(int i=left; i<right; i++) {
+            if(distance(points[i]) < dis) {
+                swap(points, left, i);
                 left++;
             }
         }
+        swap(points, left, right);
 
-        if(distance(points[left]) < pivotDist)
-            left++;
         return left;
     }
 
