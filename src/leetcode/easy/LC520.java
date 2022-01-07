@@ -1,3 +1,5 @@
+package leetcode.easy;
+
 public class LC520 {
 
     public boolean detectCapitalUse(String word) {
