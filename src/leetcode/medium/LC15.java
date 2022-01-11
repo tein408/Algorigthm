@@ -1,12 +1,10 @@
 package leetcode.medium;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class LC15 {
 
-    public List<List<Integer>> threeSum(int[] nums) {
+/*    public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         if(nums.length < 3)
             return ans;
@@ -42,6 +40,36 @@ public class LC15 {
             }
         }
         return ans;
+    }*/
+
+    // Set 이용
+    public List<List<Integer>> threeSum(int[] nums) {
+        Set<List<Integer>> answer  = new HashSet<>();
+        if (nums.length < 3)
+            return new ArrayList<>(answer);
+        
+        Arrays.sort(nums);
+        
+        for (int i=0; i<nums.length-2;i++){
+            int left = i+1;
+            int  right = nums.length-1;
+            while(left < right){
+                int sum = nums[i] + nums[left] + nums[right];
+
+                if(sum == 0) {
+                    answer.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    left++;
+                    right--;
+                }
+                else if (sum > 0)
+                    right--;
+                else if (sum < 0)
+                    left++;
+            }
+
+        }
+
+        return new ArrayList<>(answer);
     }
 
 }
