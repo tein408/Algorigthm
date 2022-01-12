@@ -1,26 +1,11 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
+package leetcode.easy;
 
-/*
 class LC404 {
-    public int sumOfLeftLeaves(TreeNode root) {
+    public int sumOfLeftLeaves(TreeNode404 root) {
         return sum(root);
 
     }
-    int sum(TreeNode root) {
+    int sum(TreeNode404 root) {
         if(root==null)
             return 0;
         int sum = 0;
@@ -34,4 +19,18 @@ class LC404 {
         sum += sum(root.right);
         return sum;
     }
-}*/
+}
+
+//Definition for a binary tree node.
+class TreeNode404 {
+    int val;
+    TreeNode404 left;
+    TreeNode404 right;
+    TreeNode404() {}
+    TreeNode404(int val) { this.val = val; }
+    TreeNode404(int val, TreeNode404 left, TreeNode404 right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}

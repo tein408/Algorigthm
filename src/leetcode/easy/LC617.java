@@ -2,7 +2,7 @@ package leetcode.easy;
 
 public class LC617 {
 
-    public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
+    public TreeNode617 mergeTrees(TreeNode617 root1, TreeNode617 root2) {
         if(root1 == null)
             return root2;
         if(root2 == null)
@@ -18,19 +18,19 @@ public class LC617 {
 
 
 //Definition for a binary tree node.
-class TreeNode {
+class TreeNode617 {
     int val;
-    TreeNode left;
-    TreeNode right;
+    TreeNode617 left;
+    TreeNode617 right;
 
-    TreeNode() {
+    TreeNode617() {
     }
 
-    TreeNode(int val) {
+    TreeNode617(int val) {
         this.val = val;
     }
 
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    TreeNode617(int val, TreeNode617 left, TreeNode617 right) {
         this.val = val;
         this.left = left;
         this.right = right;
