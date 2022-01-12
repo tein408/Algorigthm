@@ -4,9 +4,6 @@ public class LC997 {
 
     public int findJudge(int n, int[][] trust) {
         // edge case
-        // n == 0 아무도 없음
-        if(n == 0)
-            return -1;
         // n == 1 신뢰 받는 사람이 한명, 즉 판사
         if(n == 1)
             return 1;
@@ -22,8 +19,6 @@ public class LC997 {
         // 일반인이     신뢰 보냄   판사에게
 
         for(int i=0; i<trust.length; i++) {
-            //신뢰를 보내면 --
-            //신뢰를 받으면 ++
             town[trust[i][0]]--;
             town[trust[i][1]]++;
         }
