@@ -3,27 +3,39 @@ package leetcode.medium;
 public class LC1014 {
 
     public int maxScoreSightseeingPair(int[] values) {
-        int n = values.length;
-        int max = Integer.MIN_VALUE;
+        // edge case : values.length == 2
+        if (values.length == 2)
+            return values[0] + values[1] - 1;
 
-        // initial value setting
-        int leftMax = values[0];
+        // Time Complexity : O(N)
+        // Space Complexity : O(1)
 
-        // values[i] + values[j] + i - j
-        // values[i] + i + values[j] - j
+//         int result = 0;
+//         int prev = values[0];
 
-        // leftMax : values[i] + i
-        // curr : leftMax + values[j] - j
+//         // values[i] + values[j] + i - j
+//         // values[i] + i + values[j] - j
 
-        for (int i=1; i<n; i++) {
-            int curr = leftMax + values[i] - i;
-            max = Math.max(curr, max);
+//         for(int i=1; i<values.length; i++) {
+//             result = Math.max(result, prev + values[i] - i);
+//             prev = Math.max(prev, values[i] + i);
+//         }
 
-            int left = values[i] + i;
-            leftMax = Math.max(left, leftMax);
+        int result = 0;
+        int prev = 0;
+
+        // prev = values[0] + 0;
+        // prev = Math.max(prev, values[i] + i);
+        // i == 1, values[1] + 1;
+        // i == 2, values[2] + 2;
+        // ...
+
+        for (int curr : values) {
+            result = Math.max(result, prev + curr);
+            prev = Math.max(prev, curr) - 1;
         }
 
-        return max;
+        return result;
     }
-
 }
+
