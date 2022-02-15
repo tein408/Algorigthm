@@ -1,3 +1,5 @@
+package leetcode.easy;
+
 public class LC1013 {
 
     public boolean canThreePartsEqualSum(int[] arr) {
