@@ -32,6 +32,8 @@ public class LC973 {
     }
 
     //quick selection
+    // Time Complexity : N + N/2 + N/4 + .. + N/N = O(N)
+    // Space Complexity : O(1)
     public int[][] kClosest(int[][] points, int k) {
         return select(points, k);
     }
