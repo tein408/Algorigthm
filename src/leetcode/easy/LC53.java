@@ -44,7 +44,7 @@ public class LC53 {
         if(nums.length < 2)
             return nums[0];
 
-        int max = Integer.MIN_VALUE;
+        int max = nums[0];
         int[] temp = new int[nums.length];
         temp[0] = nums[0];
 
