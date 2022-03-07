@@ -42,7 +42,7 @@ public class Treenode {
 
     }
 
-    public void preOrder(Node root) {
+    public static void preOrder(Node root) {
         if(root != null) {
             System.out.println(root.getData() + " ");
             preOrder(root.getLeft());
@@ -50,18 +50,18 @@ public class Treenode {
         }
     }
 
-    public void inOrder(Node root) {
+    public static void inOrder(Node root) {
         if(root != null) {
-            preOrder(root.getLeft());
+            inOrder(root.getLeft());
             System.out.println(root.getData() + " ");
-            preOrder(root.getRight());
+            inOrder(root.getRight());
         }
     }
 
-    public void postOrder(Node root) {
+    public static void postOrder(Node root) {
         if(root != null) {
-            preOrder(root.getLeft());
-            preOrder(root.getRight());
+            postOrder(root.getLeft());
+            postOrder(root.getRight());
             System.out.println(root.getData() + " ");
         }
     }
